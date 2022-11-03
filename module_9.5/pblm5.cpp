@@ -11,24 +11,21 @@ int main(){
 	}
 	scanf("%d", &target);
 	
-	for(i=0;i<N-1;i++){
-//		for(j=0;j<N;j++){
-//			if(arr[i]+arr[j]==target){
-//				printf("YES ");
-//				break;
-//			}
-//			else{
-//				continue;
-//			}
-//			printf("No");
-//		}
+	int flag=0;
 	
-		if(arr[i]+arr[i+1]==target){
-			printf("YES");
-			break;
-		}
-		else{
-			printf("NO");
+	for(i=0;i<N-1;i++){
+		for(j=i+1;j<N;j++){
+			if(arr[i]+arr[j]==target){
+				flag=1;
+				break;
+			}	
 		}
 	}
+	if(flag==1){
+		printf("YES");
+	}
+	else{
+		printf("NO");
+	}
+	return 0;
 }
